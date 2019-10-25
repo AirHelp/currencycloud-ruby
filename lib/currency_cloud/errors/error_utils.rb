@@ -1,5 +1,8 @@
 module CurrencyCloud
   module ErrorUtils
+    WHITELISTED_PARAMS = [:login_id, :api_key, :token].freeze
+    SANITIZED_VALUE = "[FILTERED]".freeze
+
     def platform
       base = "ruby-#{RUBY_VERSION}"
       implementation = case RUBY_ENGINE
